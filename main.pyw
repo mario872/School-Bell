@@ -2,9 +2,21 @@ import PySimpleGUI as GUI
 from datetime import datetime as dt
 from datetime import date
 
+import os
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 import yaml
 
-with open('settings.yaml') as settings_yaml:
+with open(resource_path('settings.yaml')) as settings_yaml:
         settings = yaml.load(settings_yaml, Loader=yaml.FullLoader)
         settings_yaml.close()
 
@@ -22,7 +34,7 @@ layout = [[GUI.Text('Days Left Until End of School Year:'), GUI.Text(size=(12,1)
 window = GUI.Window('Depressing', layout, finalize=True)
 
 def open_settings():
-    with open('settings.yaml') as settings_yaml:
+    with open(resource_path('settings.yaml')) as settings_yaml:
         settings = yaml.load(settings_yaml, Loader=yaml.FullLoader)
         settings_yaml.close()
     
@@ -56,12 +68,12 @@ def open_settings():
             settings = {}
             for settings_option in list(values.keys()):
                 settings[settings_option] = values[settings_option]
-            with open('settings.yaml', 'w') as settings_yaml:
+            with open(resource_path('settings.yaml', 'w')) as settings_yaml:
                 data = yaml.dump(settings, settings_yaml, sort_keys=False, default_flow_style=False)
                 
     window.close()
             
-with open('settings.yaml') as settings_yaml:
+with open(resource_path('settings.yaml')) as settings_yaml:
         settings = yaml.load(settings_yaml, Loader=yaml.FullLoader)
         settings_yaml.close()
 weekday = date.today().weekday()       
