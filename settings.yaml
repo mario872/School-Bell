@@ -1,0 +1,13 @@
+monday-hour: '15'
+monday-minute: '05'
+tuesday-hour: '15'
+tuesday-minute: '05'
+wednesday-hour: '14'
+wednesday-minute: '45'
+thursday-hour: '15'
+thursday-minute: '05'
+friday-hour: '15'
+friday-minute: '05'
+last-day-day: '15'
+last-day-month: '12'
+colour-theme: DarkAmber
