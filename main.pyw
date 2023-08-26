@@ -68,7 +68,7 @@ def open_settings():
             settings = {}
             for settings_option in list(values.keys()):
                 settings[settings_option] = values[settings_option]
-            with open(resource_path('settings.yaml', 'w')) as settings_yaml:
+            with open(resource_path('settings.yaml'), 'w') as settings_yaml:
                 data = yaml.dump(settings, settings_yaml, sort_keys=False, default_flow_style=False)
                 
     window.close()
