@@ -2,6 +2,6 @@
 A small Python Tkinter application built with PySimpleGUI to inform the user of how much time is left until the end of the school day, and the end of the school year.
 
 ### Update
-So, I was hoping to package this yesterday, but that didn't happen because now I'm going to make an installer for the Depressing app. Changes coming soon!
+I've now packaged this, but haven't found a way to stop Microsoft Smart Screen [Insert Angry Grumblings Here] to stop flagging main.exe as a virus. Hopefully I'll fix this soon.
 
 Icon from https://icons8.com
